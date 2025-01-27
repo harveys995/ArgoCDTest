@@ -1,17 +1,11 @@
 apiVersion: elasticsearch.k8s.elastic.co/v1
 kind: Elasticsearch
 metadata:
-  name: my-elasticsearch
-  namespace: elastic-system
+  name: quickstart
 spec:
-  version: 8.4.3  # Change to the version you want
-  nodes:
-    - nodeCount: 3
-      nodeSpec:
-        resources:
-          requests:
-            memory: 2Gi
-            cpu: 1
-          limits:
-            memory: 2Gi
-            cpu: 1
+  version: 8.17.1
+  nodeSets:
+    - name: default
+      count: 1
+      config:
+        node.store.allow_mmap: false
