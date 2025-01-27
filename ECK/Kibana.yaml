@@ -1,0 +1,9 @@
+apiVersion: kibana.k8s.elastic.co/v1
+kind: Kibana
+metadata:
+  name: my-kibana
+  namespace: elastic-system
+spec:
+  version: 8.4.3  # Version of Kibana
+  elasticsearchRef:
+    name: my-elasticsearch  # Reference to your Elasticsearch cluster
